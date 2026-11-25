@@ -1,0 +1,49 @@
+{
+  "name": "claude-alexa-notify",
+  "displayName": "Claude Alexa Notify",
+  "description": "Announces Claude Code notifications and completion via Alexa (Voice Monkey), with idle-time and window-focus aware suppression.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "claudeAlexaNotify",
+          "title": "Claude Alexa Notify",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "claudeAlexaNotify": [
+        {
+          "id": "claudeAlexaNotify.panel",
+          "name": "Settings",
+          "type": "webview"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "alexaNotify.toggleEnabled",
+        "title": "Claude Alexa Notify: Toggle Announcements"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.4.0",
+    "@vscode/vsce": "^2.26.0"
+  }
+}

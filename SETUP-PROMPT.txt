@@ -1,0 +1,29 @@
+Claude Code Notifications - setup prompt
+=========================================
+
+How to use:
+1. Clone this repo, or download it from GitHub (Code > Download ZIP) and unzip it.
+2. In the first line below, replace the path with the folder you cloned or unzipped to.
+   This folder holds README.md and the "claude-notify-setup" folder.
+3. Open a new Claude Code chat in VS Code and paste everything between the lines.
+
+----------------------------------------------------------------------
+I cloned the claude-code-notify repo to: C:\Users\<me>\source\repos\claude-code-notify
+
+Set up the Claude Code notification system from it:
+
+1. Copy the "claude-notify-setup" folder from that location to %USERPROFILE%\.claude\skills\, so SKILL.md ends up at %USERPROFILE%\.claude\skills\claude-notify-setup\SKILL.md. If that folder already exists, show me what's in it and ask before you replace it.
+2. Read SKILL.md and MANUAL.md from that folder fully, then follow SKILL.md step by step.
+3. Before you install anything, ask me which channels I want: Windows toast only, or Windows toast plus Alexa. If I choose Alexa, ask me for my Voice Monkey token and device name. Don't guess them, and don't repeat the token back in chat.
+4. Install the prebuilt claude-alexa-notify-0.1.0.vsix that ships in the skill folder. Build from the assets source only if the .vsix is missing or fails to install.
+5. Run the AUMID check in SKILL.md step 5 on my machine. If my VS Code app ID isn't Microsoft.VisualStudioCode, stop and tell me before you change any source.
+6. Read my %USERPROFILE%\.claude\settings.json first. Merge in the four hooks from SKILL.md step 4 and keep everything already there. Show me the exact change before you save it, and then check that the JSON still parses.
+7. When the extension is installed, tell me to run "Developer: Reload Window", then wait for me to confirm before you test anything.
+8. After I confirm, check that the extension is listening on port 8765. Then help me test:
+   (a) the panel's "Send test announcement" button,
+   (b) a real notification after I've been away from the keyboard for over 60 seconds,
+   (c) clicking the toast to check that it brings VS Code to the front.
+9. If anything fails, look up the symptom in MANUAL.md section 7 (Fault Isolation) before you try other fixes.
+
+At the end, give me a short summary: what you installed, which hooks you added, and anything that didn't work.
+----------------------------------------------------------------------
